@@ -9,7 +9,7 @@ Card(cardsEl[0], {
     title: "New transaction",
     subTitle: "Create new transaction from order",
     additionalText: "You can create new transaction here",
-    bgHeader: "bg-primary",
+    bgHeader: "bg-primary bg-gradient",
     icon: "fas fa-cart-plus",
     href: "./src/pages/transaction"
 });
@@ -27,7 +27,7 @@ Card(cardsEl[2], {
     title: "Manage items",
     subTitle: "Manage all your items",
     additionalText: "You can manage your items here",
-    bgHeader: "bg-dark",
+    bgHeader: "bg-dark bg-gradient",
     icon: "fa fa-tasks",
     href: ""
 });
