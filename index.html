@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Manifest -->
-    <link rel="./manifest.json" type="aplication/json" rel="manifest" >
+    <link rel="manifest" href="./manifest.json" type="aplication/json" >
+    <meta name="theme-color" content="#0d6efd">
 
     <!-- Icon -->
     <link rel="icon" href="./public/images/icons/icon-144x144.png" size="144x144" type="image/png">
@@ -89,7 +90,6 @@
                 </a>
             </div>
         </div>
-
     </main>    
     
     <footer class="container-lg mt-5 text-center">
@@ -103,7 +103,10 @@
         <div class="modal-dialog">
             <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Create new transaction</h5>
+                <h5 class="modal-title" id="exampleModalLabel">
+                  <i class="fas fa-cart-plus"></i>  
+                  Create new transaction
+                </h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
@@ -128,7 +131,21 @@
                         <span class="input-group-text">Pcs</span>
                         <input type="number" placeholder="ex: 2" name="amountOfItem" class="form-control" id="amountOfItem">
                     </div>
-
+                    
+                    <!-- price per units -->
+                    <label for="pricePerUnit" class="form-label">Price per unit</label>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text">Rp.</span>
+                        <input type="text" name="pricePerUnit" class="form-control" id="pricePerUnit" readonly>
+                    </div>
+                    
+                    <!-- total per units -->
+                    <label for="total" class="form-label">Total</label>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text">Rp.</span>
+                        <input type="text" name="total" class="form-control" id="total" readonly>
+                    </div>
+                    
                     <!-- cash from customer -->
                     <label for="cash" class="form-label">Cash</label>
                     <div class="input-group mb-3">
@@ -136,8 +153,9 @@
                         <input type="text" placeholder="ex: 45.000,00" name="cash" class="form-control" id="cash">
                     </div>
 
+                    
                     <!-- money changes customer -->
-                    <label for="moneyChanges" class="form-label">Cash</label>
+                    <label for="moneyChanges" class="form-label">Money Changes</label>
                     <div class="input-group mb-3">
                         <span class="input-group-text">Rp.</span>
                         <input type="text" name="moneyChanges" class="form-control" id="moneyChanges" readonly>
@@ -146,7 +164,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
+                <button type="submit" class="btn btn-primary">Submit</button>
             </div>
             </div>
         </div>
