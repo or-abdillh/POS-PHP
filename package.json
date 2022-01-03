@@ -1,0 +1,24 @@
+{
+  "name": "pos-php",
+  "version": "1.0.0",
+  "description": "Aplikasi Point of Sale berbasis website menggunakan PHP native dan MySQL",
+  "main": "index.php",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "\u0016https://github.com/or-abdillh/POS-PHP.git"
+  },
+  "keywords": [
+    "POS",
+    "PHP",
+    "MySQL"
+  ],
+  "author": "Oka R. Abdillah",
+  "license": "ISC",
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.15.4",
+    "bootstrap": "^5.1.3"
+  }
+}
