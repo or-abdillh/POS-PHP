@@ -1,11 +1,13 @@
 //Client Side Rendering modules
 import Navbar from "./components/Navbar.js";
 import Jumbotron from "./components/Jumbotron.js";
+import Footer from "./components/Footer.js";
 
 //Element target
 const el = {
   navbar: document.querySelector("[data-root=navbar]"),
-  jumbotron: document.querySelector("[data-root=jumbotron]")
+  jumbotron: document.querySelector("[data-root=jumbotron]"),
+  footer: document.querySelector("[data-root=footer]")
 }
 
 //Rendering
@@ -18,4 +20,6 @@ Jumbotron({
   btnText: 'Contact Developer',
   icon: 'fab fa-github',
   href: 'https://github.com/or-abdillh'
-})
+});
+
+Footer(el.footer);
