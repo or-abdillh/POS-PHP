@@ -28,12 +28,16 @@
 
     <!-- Main -->
     <main class="container-md px-4 mt-5 d-lg-flex gap-3 justify-content-between justify-content-lg-center">
-      <h1>
-        <i class="text-dark fas fa-cart-plus"></i>
+      
+      <!-- Breadcumb -->
+      <div class="mb-5" data-root="breadcumb"></div>
+      
+      <h1 class="mb-3">
         Create new transaction
       </h1>
+      
       <!-- Form -->
-      <form class="mt-5" action="post">
+      <form action="post">
           <!-- Id Transaction -->
           <div class="mb-3">
               <label for="idTransaction" class="form-label">ID Transaction</label>
@@ -93,5 +97,6 @@
     <!-- Option 1: Bootstrap Bundle with Popper -->
     <script src="../../../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     <script src="../../main.js" type="module" charset="utf-8"></script>
+    <script src="../../views/Transaction.js" type="module" charset="utf-8"></script>
   </body>
 </html>
