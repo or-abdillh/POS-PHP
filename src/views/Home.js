@@ -11,7 +11,7 @@ Card(cardsEl[0], {
     additionalText: "You can create new transaction here",
     bgHeader: "bg-primary",
     icon: "fas fa-cart-plus",
-    href: ""
+    href: "./src/pages/transaction"
 });
 
 Card(cardsEl[1], {
