@@ -1,5 +1,5 @@
 //Client Side Rendering modules
-import Navbar from "./js/Navbar.js";
+import Navbar from "./components/Navbar.js";
 
 //Element target
 const el = {
