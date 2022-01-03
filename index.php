@@ -5,6 +5,12 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
+    <!-- Manifest -->
+    <link rel="./manifest.json" type="aplication/json" rel="manifest" >
+
+    <!-- Icon -->
+    <link rel="icon" href="./public/images/icons/icon-144x144.png" size="144x144" type="image/png">
+
     <!-- Bootstrap CSS -->
     <link href="./node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
