@@ -28,54 +28,12 @@
 
     <!-- Main -->
     <main class="container-md mt-5 d-lg-flex gap-3 justify-content-between justify-content-lg-center">
-
-    <!-- Create transaction -->
-        <div class="card mb-5">
-            <div class="card-header bg-success text-light">
-                <i class="fas fa-cart-plus"></i>
-                Create transaction
-            </div>
-            <div class="card-body">
-                <h5 class="card-title">Create new transaction from order</h5>
-                <p class="card-text">You can create new transaction here</p>
-                <a href="#" data-bs-toggle="modal" data-bs-target="#createTransaction" class="btn btn-outline-secondary">
-                    <i class="fas fa-arrow-right"></i>
-                    Next
-                </a>
-            </div>
-        </div>
-    
-    <!-- Show all list transaction -->
-        <div class="card mb-5">
-            <div class="card-header bg-secondary text-light">
-                <i class="fas fa-history"></i>
-                History transaction
-            </div>
-            <div class="card-body">
-                <h5 class="card-title">See all history transaction</h5>
-                <p class="card-text">You can see all history transaction here</p>
-                <a href="#" class="btn btn-outline-secondary">
-                    <i class="fas fa-arrow-right"></i>
-                    Next
-                </a>
-            </div>
-        </div>
-
+        <!-- Create transaction -->
+        <div data-root="card"></div>
+        <!-- Show all list transaction -->
+        <div data-root="card"></div>
         <!-- Manage your items -->
-        <div class="card mb-5">
-            <div class="card-header bg-dark text-light">
-                <i class="fas fa-tasks"></i>
-                Manage Items
-            </div>
-            <div class="card-body">
-                <h5 class="card-title">Manage all your items</h5>
-                <p class="card-text">You can manage your items here</p>
-                <a href="#" class="btn btn-outline-secondary">
-                    <i class="fas fa-arrow-right"></i>
-                    Next
-                </a>
-            </div>
-        </div>
+        <div data-root="card"></div>
     </main>    
     
     <!-- Footer -->
@@ -156,5 +114,6 @@
     <!-- Option 1: Bootstrap Bundle with Popper -->
     <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     <script src="./src/main.js" type="module" charset="utf-8"></script>
+    <script src="./src/views/Home.js" type="module" charset="utf-8"></script>
   </body>
 </html>
