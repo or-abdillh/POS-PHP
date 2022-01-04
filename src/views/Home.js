@@ -5,6 +5,8 @@ import Card from "../components/Card.js";
 const cardsEl = document.querySelectorAll("[data-root=card]");
 
 //Render
+
+// New transaction
 Card(cardsEl[0], {
     title: "New transaction",
     subTitle: "Create new transaction from order",
@@ -14,15 +16,17 @@ Card(cardsEl[0], {
     href: "./src/pages/transaction"
 });
 
+// History
 Card(cardsEl[1], {
     title: "History",
     subTitle: "See all history transaction",
     additionalText: "You can see all history transaction here",
     bgHeader: "bg-success bg-gradient",
     icon: "fas fa-history",
-    href: ""
+    href: "./src/pages/history"
 });
 
+// Manage items
 Card(cardsEl[2], {
     title: "Manage items",
     subTitle: "Manage all your items",
