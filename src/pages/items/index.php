@@ -24,7 +24,6 @@
     <script type="text/javascript" charset="utf-8">
       $(document).ready( function () {
         $('#table_id').DataTable({
-          'scrollY': 200,
           'scrollX': true
         });
       });
