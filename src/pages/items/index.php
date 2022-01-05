@@ -1,3 +1,10 @@
+<?php
+
+  require("../../server/connection.php");
+  require("../../server/getter/get_items.php");
+
+?>
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -79,24 +86,42 @@
         </thead>
         
         <tbody>
-          <tr>
-            <td>1</td>
-            <td>ITEM001</td>
-            <td>Sunsilk for Hijab</td>
-            <td>Rp 24.000</td>
-            <td>Mon 4/12/22 15:45</td>
-            <td>Mon 4/12/22 15:45</td>
-            <td class="text-center">
-                <div class="d-flex justify-content-center gap-2">
-                    <a href="#" class="btn btn-danger btn-sm text-light">
-                      <i class="fa fa-trash"></i>
-                    </a>
-                    <a href="#" class="btn btn-primary btn-sm text-light">
-                      <i class="fa fa-edit"></i>
-                    </a>
-                </div>
-            </td>
-          </tr>
+          <?php
+            $no = 1;
+            foreach( get_items($conn) as $item )
+            {
+              $item_id = $item["item_id"];
+              $item_id_txt = $item["item_id_txt"];
+              $item_name = $item["item_name"];
+              $item_price = $item["item_price"];
+              $last_modified = $item["last_modified"];
+              $create_at = $item["create_at"];
+
+              //Render
+              echo <<<EOT
+              <tr>
+                <td>$no</td>
+                <td>$item_id_txt</td>
+                <td>$item_name</td>
+                <td>Rp $item_price</td>
+                <td>$last_modified</td>
+                <td>$create_at</td>
+                <td class="text-center">
+                    <div class="d-flex justify-content-center gap-2">
+                        <a href="#" class="btn btn-danger btn-sm text-light">
+                          <i class="fa fa-trash"></i>
+                        </a>
+                        <a href="#" class="btn btn-primary btn-sm text-light">
+                          <i class="fa fa-edit"></i>
+                        </a>
+                    </div>
+                </td>
+              </tr>
+              EOT;
+              //increment table number
+              $no++;
+            }
+          ?>
         </tbody>
       </table>
     </main>
