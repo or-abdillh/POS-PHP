@@ -111,7 +111,7 @@
                           <i class="fa fa-trash"></i>
                         </a>
                         <a href="#" data-bs-toggle="modal" data-role="trigger" data-bs-target="#modalUpdate" 
-                          data-item-name="$item_name" data-item-price="$item_price" data-item-id-text="$item_id_txt@$item_id" class="btn btn-primary btn-sm text-light">
+                          data-item-name="$item_name" data-item-id="$item_id" data-item-price="$item_price" data-item-id-text="$item_id_txt" class="btn btn-primary btn-sm text-light">
                           <i class="fa fa-edit"></i>
                         </a>
                     </div>

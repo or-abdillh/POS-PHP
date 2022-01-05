@@ -82,14 +82,12 @@ triggers.forEach( btn => {
         }
 
         //Current dataset
-        const data = e.target.dataset;
+        const data = btn.dataset;
 
         //Fill form
-        form.itemId.value = data.itemIdText.split('@')[1];
-        form.itemIdTxt.value = data.itemIdText.split('@')[0];
         form.itemName.value = data.itemName;
         form.itemPrice.value = data.itemPrice;
-        console.log(e.target.dataset);
-        console.log(form);
+        form.itemIdTxt.value = data.itemIdText;
+        form.itemId.value = data.itemId;
     })
 });
