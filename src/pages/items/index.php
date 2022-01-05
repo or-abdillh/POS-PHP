@@ -110,7 +110,8 @@
                         <a href="../../server/setter/remove_item.php?key=$item_id" class="btn btn-danger btn-sm text-light">
                           <i class="fa fa-trash"></i>
                         </a>
-                        <a href="#" class="btn btn-primary btn-sm text-light">
+                        <a href="#" data-bs-toggle="modal" data-role="trigger" data-bs-target="#modalUpdate" 
+                          data-item-name="$item_name" data-item-price="$item_price" data-item-id-text="$item_id_txt@$item_id" class="btn btn-primary btn-sm text-light">
                           <i class="fa fa-edit"></i>
                         </a>
                     </div>
@@ -126,6 +127,7 @@
     </main>
 
     <section data-root="modal"></section>
+    <section data-root="modal-update"></section>
     
     <!-- Footer -->
     <section data-root="footer"></section>

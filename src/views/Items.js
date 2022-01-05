@@ -6,14 +6,20 @@ import Modal from "../components/Modal.js";
 //Get element
 const breadcumbEl = document.querySelector("[data-root=breadcumb]");
 const modalEl = document.querySelector("[data-root=modal]");
+const modalElUpdate = document.querySelector("[data-root=modal-update]");
+
+console.log(modalEl);
 
 //console.log(Modal)
 
 //Render
 Breadcumb(breadcumbEl, { home: "../../../", current: "Items" });
 
-//Create body form
-const body = `
+//Modal new item
+Modal(modalEl, {
+    idModal: "modalNewItem",
+    title: "Create new item",
+    body: `
     <form id="newItem" action="../../server/setter/set_item.php" method="post">
         <div class="mb-3">
             <label for="idItem" class="form-label">ID Item</label>
@@ -29,12 +35,61 @@ const body = `
               <input type="text" placeholder="ex: 45.000" name="priceItem" class="form-control form-control-lg" id="amountOfItem" required>
           </div>
     </form>
-`;
-
-Modal(modalEl, {
-    idModal: "modalNewItem",
-    title: "Create new item",
-    body,
+    `,
     form: true,
     idForm: "newItem"
 })
+
+//Modal update
+Modal(modalElUpdate, {
+    idModal: "modalUpdate",
+    title: "Update item",
+    body: `
+    <form id="updateItem" action="../../server/setter/set_item.php" method="post">
+        <input type="hidden" value="" id="item_id" />
+        <div class="mb-3">
+            <label for="item_id_text" class="form-label">ID Item</label>
+            <input value="" type="text" placeholder="ex: ITM001" name="item_id_text" class="form-control form-control-lg" id="idTransaction" aria-describedby="idTransactionHelp" required>
+        </div>
+        <div class="mb-3">
+            <label for="item_name" class="form-label">Name</label>
+            <input value="" type="text" placeholder="ex: Sunsilk for hijab" name="item_name" class="form-control form-control-lg" id="idTransaction" aria-describedby="idTransactionHelp" required>
+        </div>
+        <label for="item_price" class="form-label">Price</label>
+          <div class="input-group mb-3">
+              <span class="input-group-text">Rp</span>
+              <input value="" type="text" placeholder="ex: 45.000" name="item_price" class="form-control form-control-lg" id="amountOfItem" required>
+          </div>
+    </form>
+    `,
+    form: true,
+    idForm: "updateItem"
+})
+
+//Fill form update automatic
+const triggers = document.querySelectorAll("[data-role=trigger]");
+
+
+triggers.forEach( btn => {
+    //Event click
+    btn.addEventListener("click", e => {
+        //Get form 
+        const  form = {
+            itemId: document.querySelector("#updateItem #item_id"),
+            itemIdTxt: document.querySelector("#updateItem [name=item_id_text]"),
+            itemName: document.querySelector("#updateItem [name=item_name]"),
+            itemPrice: document.querySelector("#updateItem [name=item_price]")
+        }
+
+        //Current dataset
+        const data = e.target.dataset;
+
+        //Fill form
+        form.itemId.value = data.itemIdText.split('@')[1];
+        form.itemIdTxt.value = data.itemIdText.split('@')[0];
+        form.itemName.value = data.itemName;
+        form.itemPrice.value = data.itemPrice;
+        console.log(e.target.dataset);
+        console.log(form);
+    })
+});
