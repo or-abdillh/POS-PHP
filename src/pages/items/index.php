@@ -107,7 +107,7 @@
                 <td>$create_at</td>
                 <td class="text-center">
                     <div class="d-flex justify-content-center gap-2">
-                        <a href="#" class="btn btn-danger btn-sm text-light">
+                        <a href="../../server/setter/remove_item.php?key=$item_id" class="btn btn-danger btn-sm text-light">
                           <i class="fa fa-trash"></i>
                         </a>
                         <a href="#" class="btn btn-primary btn-sm text-light">
