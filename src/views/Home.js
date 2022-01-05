@@ -33,5 +33,5 @@ Card(cardsEl[2], {
     additionalText: "You can manage your items here",
     bgHeader: "bg-dark bg-gradient",
     icon: "fa fa-tasks",
-    href: ""
+    href: "./src/pages/items"
 });
