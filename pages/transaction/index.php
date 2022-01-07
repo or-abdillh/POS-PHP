@@ -44,7 +44,7 @@ require("../../src/server/getter/get_items.php");
       </h1>
       
       <!-- Form -->
-      <form met="post" action="../../src/server/setter/set_transaction.php">
+      <form method="POST" action="../../src/server/setter/set_transaction.php">
           <!-- Id Transaction -->
           <div class="mb-3">
               <label for="transactionId" class="form-label">ID Transaction</label>
@@ -110,7 +110,7 @@ EOT;
           </div>
           
           <!-- Buttons -->
-          <button class="btn btn-primary" type="submit">Submit</button>
+          <button name="create_new_transaction" class="btn btn-primary" type="submit">Submit</button>
           <button class="btn btn-secondary" type="reset">Reset</button>
       </form>
     </main>    

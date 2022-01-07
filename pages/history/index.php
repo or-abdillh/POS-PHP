@@ -1,3 +1,9 @@
+<?php
+
+require("../../src/server/connection.php");
+require("../../src/server/getter/get_transactions.php");
+
+?>
 <!doctype html>
 <html lang="en">
   <head>
@@ -45,7 +51,7 @@
     <section data-root="jumbotron"></section>
 
     <!-- Main -->
-    <main class="container-md px-4 mt-5 d-lg-flex gap-3 justify-content-between justify-content-lg-center">
+    <main class="container-md px-4 mt-5">
       
       <!-- Breadcumb -->
       <div class="mb-5" data-root="breadcumb"></div>
@@ -55,33 +61,63 @@
       </h1>
       
       <!-- Table -->
-      <table class="table table-striped" id="table_id">
+      <table class="table table-striped" style="width: 100%" id="table_id">
         <thead>
           <tr>
             <th>No</th>
             <th>ID Transaction</th>
-            <th>Item</th>
+            <th>ID Item</th>
+            <th>Name</th>
             <th>Amount</th>
             <th>Price</th>
+            <th>Total</th>
+            <th>Cash</th>
+            <th>Money Changes</th>
             <th>Timestamp</th>
             <th>Actions</th>
           </tr>
         </thead>
         
         <tbody>
-          <tr>
-            <td>1</td>
-            <td>TRX0001</td>
-            <td>Sunsilk for Hijab</td>
-            <td>1pcs</td>
-            <td>Rp 24.000</td>
-            <td>Mon 4/12/22 15:45</td>
-            <td class="text-center">
-              <a href="#" class="btn btn-danger text-light">
-                <i class="fa fa-trash"></i>
-              </a>
-            </td>
-          </tr>
+          <?php
+          $no = 1;
+          //Render data
+          foreach ( get_transactions($conn) as $item )
+          {
+            //Parsing data
+            $transactionIdTxt = $item["transaction_id_txt"];
+            $transactionId = $item["transaction_id"];
+            $transactionAmount = $item["transaction_amount"];
+            $transactionTotal = $item["transaction_total"];
+            $transactionCash = $item["transaction_cash"];
+            $transactionMoneyChanges = $item["transaction_money_changes"];
+            $transactionCreateAt = $item["transaction_create_at"];
+            $itemIdTxt = $item["item_id_txt"];
+            $itemName = $item["item_name"];
+            $itemPrice = $item["item_price"];
+            
+            echo "
+              <tr>
+                <td>$no</td>
+                <td>$transactionIdTxt</td>
+                <td>$itemIdTxt</td>
+                <td>$itemName</td>
+                <td>$transactionAmount</td>
+                <td>$itemPrice</td>
+                <td>$transactionTotal</td>
+                <td>$transactionCash</td>
+                <td>$transactionMoneyChanges</td>
+                <td>$transactionCreateAt</td>
+                <td>
+                  <a class=\"btn btn-danger\" href=\"../../src/server/setter/remove_transaction.php?key=$transactionId\">
+                    <i class=\"fa fa-trash\"></i>
+                  </a>
+                </td>
+              </tr>";
+            //Increment number
+            $no++;
+          }
+          ?>
         </tbody>
       </table>
     </main>    
