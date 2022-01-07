@@ -18,4 +18,4 @@ $sql = "INSERT INTO items ( `item_id_txt`, `item_name`, `item_price`, `create_at
 
 $results = mysqli_query( $conn, $sql );
 
-header("Location: ../../pages/items");
+header("Location: ../../../pages/items");

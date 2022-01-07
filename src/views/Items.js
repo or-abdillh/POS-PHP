@@ -13,14 +13,14 @@ console.log(modalEl);
 //console.log(Modal)
 
 //Render
-Breadcumb(breadcumbEl, { home: "../../../", current: "Items" });
+Breadcumb(breadcumbEl, { home: "../../", current: "Items" });
 
 //Modal new item
 Modal(modalEl, {
     idModal: "modalNewItem",
     title: "Create new item",
     body: `
-    <form id="newItem" action="../../server/setter/set_item.php" method="post">
+    <form id="newItem" action="../../src/server/setter/set_item.php" method="post">
         <div class="mb-3">
             <label for="idItem" class="form-label">ID Item</label>
             <input type="text" placeholder="ex: ITM001" name="idItem" class="form-control form-control-lg" id="idTransaction" aria-describedby="idTransactionHelp" required>
@@ -45,7 +45,7 @@ Modal(modalElUpdate, {
     idModal: "modalUpdate",
     title: "Update item",
     body: `
-    <form id="updateItem" action="../../server/setter/set_item.php" method="post">
+    <form id="updateItem" action="../../src/server/setter/set_item.php" method="post">
         <input type="hidden" value="" id="item_id" />
         <div class="mb-3">
             <label for="item_id_text" class="form-label">ID Item</label>

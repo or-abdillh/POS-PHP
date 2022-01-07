@@ -13,7 +13,7 @@ Card(cardsEl[0], {
     additionalText: "You can create new transaction here",
     bgHeader: "bg-primary bg-gradient",
     icon: "fas fa-cart-plus",
-    href: "./src/pages/transaction"
+    href: "./pages/transaction"
 });
 
 // History
@@ -23,7 +23,7 @@ Card(cardsEl[1], {
     additionalText: "You can see all history transaction here",
     bgHeader: "bg-success bg-gradient",
     icon: "fas fa-history",
-    href: "./src/pages/history"
+    href: "./pages/history"
 });
 
 // Manage items
@@ -33,5 +33,5 @@ Card(cardsEl[2], {
     additionalText: "You can manage your items here",
     bgHeader: "bg-dark bg-gradient",
     icon: "fa fa-tasks",
-    href: "./src/pages/items"
+    href: "./pages/items"
 });

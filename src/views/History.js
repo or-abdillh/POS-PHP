@@ -6,4 +6,4 @@ import Breadcumb from "../components/Breadcumb.js";
 const breadcumbEl = document.querySelector("[data-root=breadcumb]");
 
 //Render
-Breadcumb(breadcumbEl, { home: "../../../", current: "History" });
+Breadcumb(breadcumbEl, { home: "../../", current: "History" });

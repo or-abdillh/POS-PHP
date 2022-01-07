@@ -13,4 +13,4 @@ $sql = "DELETE FROM items WHERE `item_id` = '$key'";
 mysqli_query($conn, $sql);
 
 //Redirect
-header("Location: ../../pages/items");
+header("Location: ../../../pages/items");

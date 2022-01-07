@@ -1,7 +1,7 @@
 <?php
 
-  require("../../server/connection.php");
-  require("../../server/getter/get_items.php");
+  require("../../src/server/connection.php");
+  require("../../src/server/getter/get_items.php");
 
 ?>
 
@@ -30,17 +30,17 @@
     </script>
     
     <!-- Manifest -->
-    <link rel="manifest" href="../../../manifest.json" type="aplication/json" >
+    <link rel="manifest" href="../../manifest.json" type="aplication/json" >
     <meta name="theme-color" content="#0d6efd">
 
     <!-- Icon -->
-    <link rel="icon" href="../../../public/images/icons/icon-144x144.png" size="144x144" type="image/png">
+    <link rel="icon" href="../../src/public/images/icons/icon-144x144.png" size="144x144" type="image/png">
 
     <!-- Bootstrap CSS -->
-    <link href="../../../node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link href="../../node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="../../../node_modules/@fortawesome/fontawesome-free/css/all.css">
+    <link rel="stylesheet" href="../../node_modules/@fortawesome/fontawesome-free/css/all.css">
 
     <title>POS - History</title>
   </head>
@@ -107,7 +107,7 @@
                 <td>$create_at</td>
                 <td class="text-center">
                     <div class="d-flex justify-content-center gap-2">
-                        <a href="../../server/setter/remove_item.php?key=$item_id" class="btn btn-danger btn-sm text-light">
+                        <a href="../../src/server/setter/remove_item.php?key=$item_id" class="btn btn-danger btn-sm text-light">
                           <i class="fa fa-trash"></i>
                         </a>
                         <a href="#" data-bs-toggle="modal" data-role="trigger" data-bs-target="#modalUpdate" 
@@ -117,7 +117,7 @@
                     </div>
                 </td>
               </tr>
-              EOT;
+EOT;
               //increment table number
               $no++;
             }
@@ -133,8 +133,8 @@
     <section data-root="footer"></section>
     
     <!-- Option 1: Bootstrap Bundle with Popper -->
-    <script src="../../../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-    <script src="../../main.js" type="module" charset="utf-8"></script>
-    <script src="../../views/Items.js" type="module" charset="utf-8"></script>
+    <script src="../../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script src="../../src/main.js" type="module" charset="utf-8"></script>
+    <script src="../../src/views/Items.js" type="module" charset="utf-8"></script>
   </body>
 </html>
