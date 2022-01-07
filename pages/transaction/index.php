@@ -2,6 +2,7 @@
 
 require("../../src/server/connection.php");
 require("../../src/server/getter/get_items.php");
+require("../../src/server/helper/print_alert.php");
 
 ?>
 
@@ -42,6 +43,9 @@ require("../../src/server/getter/get_items.php");
       <h1 class="mb-3">
         Create new transaction
       </h1>
+      
+      <!-- Alert -->
+      <?php print_alert() ?>
       
       <!-- Form -->
       <form method="POST" action="../../src/server/setter/set_transaction.php">

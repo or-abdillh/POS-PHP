@@ -26,6 +26,14 @@ if ( isset($_POST["create_new_transaction"]) )
   //Query
   $res = mysqli_query($conn, $sql);
 
-  //Redirect
-  header("Location: ../../../pages/transaction");
+  //Redirect with url params
+  if ( !$res )
+  {
+    //Get error message
+    $err = mysqli_error($conn);
+    //Redirect
+    header(
+      "Location: ../../../pages/transaction?code=501&msg=$err"
+      );
+  } else header("Location: ../../../pages/transaction?code=200"); 
 }

@@ -2,7 +2,7 @@
 
 require("../../src/server/connection.php");
 require("../../src/server/getter/get_transactions.php");
-
+require("../../src/server/helper/print_alert.php");
 ?>
 <!doctype html>
 <html lang="en">
@@ -23,7 +23,6 @@ require("../../src/server/getter/get_transactions.php");
     <script type="text/javascript" charset="utf-8">
       $(document).ready( function () {
         $('#table_id').DataTable({
-          'scrollY': 200,
           'scrollX': true
         });
       });
@@ -59,6 +58,9 @@ require("../../src/server/getter/get_transactions.php");
       <h1 class="mb-5">
         History transaction
       </h1>
+      
+      <!-- Alert -->
+      <?php print_alert() ?>
       
       <!-- Table -->
       <table class="table table-striped" style="width: 100%" id="table_id">

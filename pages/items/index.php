@@ -2,7 +2,7 @@
 
   require("../../src/server/connection.php");
   require("../../src/server/getter/get_items.php");
-
+  require("../../src/server/helper/print_alert.php");
 ?>
 
 <!doctype html>
@@ -69,6 +69,9 @@
             New item
           </a>
       </div>
+      
+      <!-- Alert -->
+      <?php print_alert() ?>
       
       <!-- Table -->
       <table class="table table-striped" style="width: 100%;" id="table_id">

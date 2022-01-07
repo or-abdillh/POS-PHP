@@ -24,5 +24,13 @@ $sql = "UPDATE items SET `item_id_txt` = '$item_id_txt',
 //Query
 $res = mysqli_query($conn, $sql);
 
-//Redirect
-header("Location: ../../../pages/items");
+//Redirect with url params
+if ( !$res )
+{
+  //Get error message
+  $err = mysqli_error($conn);
+  //Redirect
+  header(
+    "Location: ../../../pages/items?code=501&msg=$err"
+    );
+} else header("Location: ../../../pages/items?code=200");

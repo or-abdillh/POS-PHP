@@ -16,6 +16,15 @@ $create_at = date('m/d/Y h:i:s a', time());
 $sql = "INSERT INTO items ( `item_id_txt`, `item_name`, `item_price`, `create_at` ) 
     VALUES ( '$item_id_txt', '$item_name', '$item_price', '$create_at' )";
 
-$results = mysqli_query( $conn, $sql );
+$res = mysqli_query( $conn, $sql );
 
-header("Location: ../../../pages/items");
+//Redirect with url params
+if ( !$res )
+{
+  //Get error message
+  $err = mysqli_error($conn);
+  //Redirect
+  header(
+    "Location: ../../../pages/items?code=501&msg=$err"
+    );
+} else header("Location: ../../../pages/items?code=200");
