@@ -44,16 +44,16 @@ require("../../src/server/getter/get_items.php");
       </h1>
       
       <!-- Form -->
-      <form action="post">
+      <form met="post" action="../../src/server/setter/set_transaction.php">
           <!-- Id Transaction -->
           <div class="mb-3">
-              <label for="idTransaction" class="form-label">ID Transaction</label>
-              <input type="text" placeholder="ex: TRX0001" name="idTransaction" class="form-control form-control-lg" id="idTransaction" aria-describedby="idTransactionHelp">
+              <label for="transactionId" class="form-label">ID Transaction</label>
+              <input type="text" placeholder="ex: TRX0001" name="transactionId" class="form-control form-control-lg" id="idTransaction" aria-describedby="idTransactionHelp" required >
               <div id="idTransactionHelp" class="form-text">transaction ID is used to mark each transaction</div>
           </div>
           <!-- Name of item -->
           <div class="mb-3">
-              <input type="hidden" name="itemId" value="">
+              <input type="hidden" name="itemId" value="" required >
               <label for="nameOfItem" class="form-label">Name of item</label>
               <select data-role="select-items" class="form-select form-select-lg" aria-label=".form-select-lg example" name="nameOfItem" id="nameOfItem">
                 <option selected="">--Choose item</option>
@@ -78,7 +78,7 @@ EOT;
           <label for="amountOfItem" class="form-label">Amounts of item</label>
           <div class="input-group mb-3">
               <span class="input-group-text">Pcs</span>
-              <input type="number" placeholder="ex: 2" name="amountOfItem" class="form-control form-control-lg" id="amountOfItem">
+              <input type="number" placeholder="ex: 2" name="amountOfItem" class="form-control form-control-lg" id="amountOfItem" required >
           </div>
           
           <!-- price per units -->
@@ -99,7 +99,7 @@ EOT;
           <label for="cash" class="form-label">Cash</label>
           <div class="input-group mb-3">
               <span class="input-group-text">Rp.</span>
-              <input type="text" placeholder="ex: 45.000,00" name="cash" class="form-control form-control-lg" id="cash">
+              <input type="text" placeholder="ex: 45.000,00" name="cash" class="form-control form-control-lg" id="cash" required >
           </div>
           
           <!-- money changes customer -->
