@@ -8,10 +8,6 @@ const breadcumbEl = document.querySelector("[data-root=breadcumb]");
 const modalEl = document.querySelector("[data-root=modal]");
 const modalElUpdate = document.querySelector("[data-root=modal-update]");
 
-console.log(modalEl);
-
-//console.log(Modal)
-
 //Render
 Breadcumb(breadcumbEl, { home: "../../", current: "Items" });
 
@@ -45,8 +41,8 @@ Modal(modalElUpdate, {
     idModal: "modalUpdate",
     title: "Update item",
     body: `
-    <form id="updateItem" action="../../src/server/setter/set_item.php" method="post">
-        <input type="hidden" value="" id="item_id" />
+    <form id="updateItem" action="../../src/server/setter/update_item.php" method="post">
+        <input type="hidden" value="" name="item_id" id="item_id" />
         <div class="mb-3">
             <label for="item_id_text" class="form-label">ID Item</label>
             <input value="" type="text" placeholder="ex: ITM001" name="item_id_text" class="form-control form-control-lg" id="idTransaction" aria-describedby="idTransactionHelp" required>
@@ -69,12 +65,11 @@ Modal(modalElUpdate, {
 //Fill form update automatic
 const triggers = document.querySelectorAll("[data-role=trigger]");
 
-
 triggers.forEach( btn => {
     //Event click
     btn.addEventListener("click", e => {
         //Get form 
-        const  form = {
+        const form = {
             itemId: document.querySelector("#updateItem #item_id"),
             itemIdTxt: document.querySelector("#updateItem [name=item_id_text]"),
             itemName: document.querySelector("#updateItem [name=item_name]"),
