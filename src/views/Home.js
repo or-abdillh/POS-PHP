@@ -23,7 +23,9 @@ Card(cardsEl[1], {
     additionalText: "You can see all history transaction here",
     bgHeader: "bg-success bg-gradient",
     icon: "fas fa-history",
-    href: "./pages/history"
+    href: "./pages/history",
+    badge: true,
+    count: 6
 });
 
 // Manage items
