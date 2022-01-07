@@ -1,3 +1,10 @@
+<?php
+
+  require("./src/server/connection.php");
+  require("./src/server/getter/get_items.php");
+  require("./src/server/getter/get_transactions.php");
+
+?>
 <!doctype html>
 <html lang="en">
   <head>
@@ -25,7 +32,19 @@
     <section data-root="navbar"></section>
     <!-- Jumbotron -->
     <section data-root="jumbotron"></section>
-
+    
+    <!-- For save current length of items and transactions table -->
+    <?php
+      //Get length of get_items and get_transactions
+      $transactions = count(get_transactions($conn));
+      $items = count(get_items($conn));
+      
+      echo "
+        <input type=\"hidden\" name=\"transactions\"value=\"$transactions\"  />
+        <input type=\"hidden\" name=\"items\"value=\"$items\"  />
+      ";
+    ?>
+    
     <!-- Main -->
     <main class="container-md mt-5 d-lg-flex gap-3 justify-content-between justify-content-lg-center">
         <!-- Create transaction -->
