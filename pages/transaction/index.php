@@ -1,3 +1,10 @@
+<?php
+
+require("../../src/server/connection.php");
+require("../../src/server/getter/get_items.php");
+
+?>
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -46,11 +53,24 @@
           </div>
           <!-- Name of item -->
           <div class="mb-3">
+              <input type="hidden" name="itemId" value="">
               <label for="nameOfItem" class="form-label">Name of item</label>
-              <select class="form-select form-select-lg" aria-label=".form-select-lg example" name="nameOfItem" id="nameOfItem">
+              <select data-role="select-items" class="form-select form-select-lg" aria-label=".form-select-lg example" name="nameOfItem" id="nameOfItem">
                 <option selected="">--Choose item</option>
-                <option value="Sunsilk Hijab Shanpo">Sunsilk Hijab Shanpo</option>
-                <option value="Gatsby Pomade">Gatsby Pomade</option>
+                <?php
+                  foreach ( get_items($conn) as $item )
+                  {
+                    //Get ID, Name, Price
+                    $item_id = $item["item_id"];
+                    $item_name = $item["item_name"];
+                    $item_price = $item["item_price"];
+                    
+                    //Render option with pattern value = id@name@price
+                    echo <<<EOT
+                      <option value="$item_id@$item_name@$item_price"> $item_name </option>
+EOT;
+                  }
+                ?>
               </select>
           </div>
 
