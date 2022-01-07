@@ -31,7 +31,7 @@ selectItemsEl.addEventListener("change", e => {
   itemIdEl.value = itemId;
   pricePerUnitEl.value = pricePerUnit;
   amountOfItemEl.value = 1;
-  totalEl.value = 0;
+  totalEl.value = pricePerUnit;
   cashEl.value = 0;
   moneyChangesEl.value = 0;
 });
