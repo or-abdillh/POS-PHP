@@ -3,6 +3,9 @@
   require("./src/server/connection.php");
   require("./src/server/getter/get_items.php");
   require("./src/server/getter/get_transactions.php");
+  require("./src/server/helper/auth.php");
+  
+  if ( !auth() ) header("Location: ./pages/login");
 
 ?>
 <!doctype html>
