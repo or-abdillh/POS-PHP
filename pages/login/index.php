@@ -1,3 +1,9 @@
+<?php
+
+  require("../../src/server/helper/print_alert.php");
+
+?>
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -19,6 +25,7 @@
   </head>
   <body>
     <section class="vh-100 bg-primary">
+      <?php print_alert() ?>
       <div class="container py-5 h-100">
         <div class="row d-flex justify-content-center align-items-center h-100">
           <div class="col col-xl-10">
@@ -26,7 +33,7 @@
               <div class="row g-0">
                 <div class="col-12 d-flex align-items-center">
                   <div class="card-body p-4 p-lg-5 text-black">
-                    <form>
+                    <form action="../../src/server/helper/login.php" method="POST">
     
                       <div class="d-flex align-items-center mb-3 pb-1">
                         <i class="fas fa-cubes fa-2x me-3" style="color: #ff6219;"></i>

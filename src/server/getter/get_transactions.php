@@ -20,6 +20,6 @@ function get_transactions( $conn )
     {
         array_push( $rows, $res );
     }
-
+    
     return $rows;
 }
