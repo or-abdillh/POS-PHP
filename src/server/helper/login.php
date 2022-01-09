@@ -29,7 +29,7 @@ if ( isset($_POST["login"]) )
     session_start();
     //Create new key
     $_SESSION["login"] = true;
-    $_SESSION["role"] = $accounts["role"];
+    $_SESSION["role"] = $accounts[0]["role"];
     
     //Redirect
     header("Location: ../../../");

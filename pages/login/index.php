@@ -1,7 +1,9 @@
 <?php
 
   require("../../src/server/helper/print_alert.php");
-
+  require("../../src/server/helper/auth.php");
+  
+  if ( auth() ) header("Location: ../../"); 
 ?>
 
 <!DOCTYPE html>
