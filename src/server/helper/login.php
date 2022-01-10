@@ -11,7 +11,7 @@ if ( isset($_POST["login"]) )
   
   //SQL 
   $sql = "SELECT accounts.fullname, roles.role FROM accounts INNER JOIN roles 
-    ON ( accounts.username = '$username' AND accounts.password = '$password' )
+    ON ( accounts.username = '$username' AND accounts.password = '$password' AND accounts.id_role = roles.id_role )
   ";
   
   //Query
