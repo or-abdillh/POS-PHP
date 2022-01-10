@@ -20,12 +20,13 @@ if ( isset($_GET["key"]) )
   $sql = "DELETE FROM transactions WHERE transaction_id = '$key'";
   
   //query
-  $res = mysqli_query($conn, $sql);
+  if ( $is_owner ) $res = mysqli_query($conn, $sql);
+  else $res = true;
   
   //Redirect with url params
   if ($res)
   {
-    if (!$is_owner) header("Location: ../../../pages/history?code=403&msg=Just%20Owner%20Can%20Do%20it%20this%20action");
+    if (!$is_owner) header("Location: ../../../pages/history?code=403&msg=Only%20the%20owner%20can%20do%20this%20action");
     else header("Location: ../../../pages/history?code=200");
   }
   else
