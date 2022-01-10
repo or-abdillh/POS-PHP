@@ -4,6 +4,7 @@
   require("./src/server/getter/get_items.php");
   require("./src/server/getter/get_transactions.php");
   require("./src/server/helper/auth.php");
+  require("./src/server/helper/print_profile.php");
   
   if ( !auth() ) header("Location: ./pages/login");
 
@@ -49,13 +50,22 @@
     ?>
     
     <!-- Main -->
-    <main class="container-md mt-5 d-lg-flex gap-3 justify-content-between justify-content-lg-center">
-        <!-- Create transaction -->
-        <div data-root="card"></div>
-        <!-- Show all list transaction -->
-        <div data-root="card"></div>
-        <!-- Manage your items -->
-        <div data-root="card"></div>
+    <main class="container-md">
+      
+      <div class="w-full mt-5 px-1">
+        <?php print_profile() ?>
+        <a class="text-decoration-none" href="./src/server/helper/logout.php">Logout</a>
+      </div>
+      
+      <div class="w-full mt-5 d-lg-flex gap-3 justify-content-between justify-content-lg-center">
+          <!-- Create transaction -->
+          <div data-root="card"></div>
+          <!-- Show all list transaction -->
+          <div data-root="card"></div>
+          <!-- Manage your items -->
+          <div data-root="card"></div>
+      </div>
+      
     </main>    
     
     <!-- Footer -->

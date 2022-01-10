@@ -30,6 +30,7 @@ if ( isset($_POST["login"]) )
     //Create new key
     $_SESSION["login"] = true;
     $_SESSION["role"] = $accounts[0]["role"];
+    $_SESSION["fullname"] = $accounts[0]["fullname"];
     
     //Redirect
     header("Location: ../../../");
